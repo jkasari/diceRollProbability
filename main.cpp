@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
 
   cout << endl;
   cout << "Calculating the probablity for each potential roll for ";
-  cout << diceNum << " " << sideNum << "'d dice. . . .";
+  cout << diceNum << ", " << sideNum << "'d dice. . . .";
   cout << endl << endl;
 
   uint32_t* outcomes = posOutcomes(sideNum, diceNum);
@@ -43,7 +43,10 @@ int main(int argc, char** argv) {
   }
 
   cout << endl;
-  cout << static_cast<double>(findLargestVal(results, arrSize)) / rollNum * 100;
+  cout << "The roll with the highest probablity is ====> | ";
+  cout << outcomes[findLargestValLocation(results, arrSize)] << " | with a probablity of | ";
+  cout << static_cast<double>(findLargestVal(results, arrSize)) / rollNum * 100 << "% |";
+  cout << endl;
   delete[] results;
   results = nullptr;
   return 0;
