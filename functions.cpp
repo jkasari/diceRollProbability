@@ -42,6 +42,19 @@ uint32_t* posOutcomes(uint32_t sideNum, uint32_t diceNum) {
 }
 
 /**
+ * takes a int array and returns the highest value
+ */
+uint32_t findLargestVal(uint32_t* vals, uint32_t numOfVals) {
+    uint32_t largestVal = 0;
+    for(int i = 0; i < numOfVals; ++i) {
+        if(largestVal < vals[i]) {
+            largestVal = vals[i];
+        }
+    }
+    return largestVal;
+}
+
+/**
  * takes the side of a dice, number of dice and the number of times you want to
  * roll and returns a int* with the number of hits for each possible number
  * combo.
