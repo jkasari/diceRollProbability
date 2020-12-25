@@ -46,8 +46,17 @@ uint32_t* posOutcomes(uint32_t sideNum, uint32_t diceNum) {
  * takes an int for the number of sides on a die plus the number of dice and
  * returns a int* with the percentage for each possible number combo.
  */
-//int* diceCalc(uint32_t sideNum, uint32_t diceNum, uint32_t rollNum, int* outcomes) {
-//  for(int i = 0; i < rollNum; ++i {
-//
-//  }
-//}
+uint32_t* diceCalc(uint32_t sideNum, uint32_t diceNum, uint32_t rollNum) {
+  uint32_t* outcomes = posOutcomes(sideNum, diceNum);
+  uint32_t* results = new uint32_t[((sideNum * diceNum) - (diceNum - 1))];
+    for(int i = 0; i < rollNum; ++i) {
+        uint32_t rollValue = diceRoll(diceNum, rollNum);
+        for(int i = 0; i < ((sideNum * diceNum) - (diceNum - 1)); ++i) {
+            if(rollValue == outcomes[i]) {
+                results[i]++;
+                continue;
+            }
+        }
+    }
+    return results;
+  }
