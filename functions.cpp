@@ -86,3 +86,19 @@ uint32_t* diceCalc(uint32_t sideNum, uint32_t diceNum, uint32_t rollNum) {
   }
   return results;
 }
+
+std::string commaArg(std::string argToComma) {
+  std::string argWithCommas;
+  for (int i = argToComma.length(), x = 2; i >= 0; --i, ++x) {
+    if ((x % 3) == 0 && x > 3) {
+      argWithCommas.push_back(',');
+    }
+    argWithCommas.push_back(argToComma[i]);
+  }
+  reverse(argWithCommas.begin(), argWithCommas.end());
+  return argWithCommas;
+}
+
+std::string commaArg(uint32_t intToComma) {
+  return commaArg(std::to_string(intToComma));
+}

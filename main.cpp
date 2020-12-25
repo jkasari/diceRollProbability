@@ -30,7 +30,8 @@ int main(int argc, char** argv) {
 
   cout << endl;
   cout << "Calculating the probablity for each potential roll for ";
-  cout << diceNum << ", " << sideNum << "'d dice. . . .";
+  cout << diceNum << ", " << sideNum << " sided dice rolled ";
+  cout << commaArg(argv[3]) << " times! . . . .";
   cout << endl << endl;
 
   uint32_t* outcomes = posOutcomes(sideNum, diceNum);
